@@ -1,6 +1,10 @@
 package com.myblognew7.payload;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
+import com.sun.istack.NotNull;
 
 public class PostDto {
 	
@@ -9,7 +13,11 @@ public class PostDto {
 	@Min(value = 5)
 	private String title;
 	
+	@Max(value = 20)
 	private String description;
+	
+	@NotNull
+	@NotEmpty
 	private String content;
 	public long getId() {
 		return id;
