@@ -1,8 +1,12 @@
 package com.myblognew7.payload;
 
+import javax.validation.constraints.Min;
+
 public class PostDto {
 	
 	private long id;
+	
+	@Min(value = 5)
 	private String title;
 	
 	private String description;
