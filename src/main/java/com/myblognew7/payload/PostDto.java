@@ -1,15 +1,26 @@
 package com.myblognew7.payload;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import com.sun.istack.NotNull;
 
 public class PostDto {
 	
-	private long id;
+private long id;
 	
-	@Min(value = 5)
+	@NotNull
+	@Size(min=2, message = "atleast 3 character")
 	private String title;
 	
+	@NotNull
+	@NotBlank
 	private String description;
+	
+	@NotNull
+	@NotEmpty
 	private String content;
 	public long getId() {
 		return id;
@@ -35,5 +46,3 @@ public class PostDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
-}
