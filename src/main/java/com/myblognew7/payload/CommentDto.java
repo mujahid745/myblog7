@@ -1,13 +1,16 @@
 package com.myblognew7.payload;
 
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 public class CommentDto {
 
 	@Id
 	private long id;
 	private String body;
+	@Email
 	private String email;
+	
 	private String name;
 	public long getId() {
 		return id;
