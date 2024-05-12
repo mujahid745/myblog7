@@ -1,9 +1,12 @@
 package com.myblognew7.payload;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
 
 import com.sun.istack.NotNull;
 
@@ -15,12 +18,14 @@ private long id;
 	@Size(min=2, message = "atleast 3 character")
 	private String title;
 	
-	@NotNull
-	@NotBlank
+
+	@Max(value = 20)
 	private String description;
 	
 	@NotNull
 	@NotEmpty
+	@Size(min = 5)
+	@Email
 	private String content;
 	public long getId() {
 		return id;
@@ -46,3 +51,4 @@ private long id;
 	public void setContent(String content) {
 		this.content = content;
 	}
+}

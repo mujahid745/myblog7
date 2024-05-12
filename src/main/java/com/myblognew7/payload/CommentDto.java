@@ -1,7 +1,10 @@
 package com.myblognew7.payload;
 
+import javax.persistence.Id;
+
 public class CommentDto {
 
+	@Id
 	private long id;
 	private String body;
 	private String email;
